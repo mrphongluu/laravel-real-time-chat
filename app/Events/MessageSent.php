@@ -41,6 +41,13 @@ class MessageSent implements ShouldBroadcast
         $this->message = $message;
     }
 
+    public function broadcastWith()
+    {
+        return [
+            'message' => $this->message,
+        ];
+    }
+
     /**
      * Get the channels the event should broadcast on.
      *
